@@ -92,7 +92,7 @@ img:hover {
   filter: grayscale(0%);
   width: 80%;
   height: auto;
-  transform: translate(-50px, 50px);
+  transform: translate(-50px, 30px);
 }
 /* Lista de Mudanças (Slide 4) */
 #slide4 ul {

@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;700&family=Roboto:wght@300;400&display=swap');
+
+:root {
+  --primary: hsl(46, 65%, 52%); /* Dourado/Atenção */
+  --bg: hsl(0, 0%, 7%);
+  --text: hsl(0, 0%, 88%);
+  --accent: hsl(0, 68%, 42%); /* Vermelho escuro */
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+  padding-top: 25px;
+  padding-left: 10px;
+}
+
+
+footer {
+  position: absolute;
+  bottom: 0%;
+  background-color: hsl(0, 0%, 10%);
+  font-family: 'Oswald';
+  font-size: small;
+  width: 100vw;
+  text-align: center;
+  padding: 5px;
+  left: 0%;
+}
+copy {
+  position: absolute;
+  left: 1%;
+  font-size: large;
+}
+
+/* Títulos Impactantes */
+t {
+  font-size: x-large;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primary);
+  display: block;
+  line-height: 1.1;
+}
+
+/* Transições de Slide */
+section {
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Imagens com Estilo */
+img {
+  filter: grayscale(30%);
+  transition: all 0.5s ease;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  width: 40%;
+}
+
+img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.02);
+}
+
+/* Lista de Mudanças (Slide 4) */
+#slide4 ul {
+  list-style: none;
+  padding: 20px;
+}
+
+#slide4 li {
+  border-left: 3px solid hsl(46, 65%, 62%);
+  background: rgba(255, 255, 255, 0.05);
+  margin-bottom: 10px;
+  padding: 15px;
+  font-size: 1.1rem;
+  transition: background 0.3s;
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+}
+
+#slide4 li:hover {
+  background: rgba(255, 255, 255, 0.1);
+  padding-left: 25px;
+}
+#slide2 ul {
+  list-style: none;
+  padding: 20px;
+}
+
+#slide2 li {
+  border-left: 3px solid var(--accent);
+  background: rgba(255, 255, 255, 0.05);
+  margin-bottom: 10px;
+  padding: 15px;
+  font-size: 1.1rem;
+  transition: background 0.3s;
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+}
+
+#slide2 li:hover {
+  background: rgba(255, 255, 255, 0.1);
+  padding-left: 25px;
+}
+
+#slide3 .center .imgCont img {
+  height: 80vh;
+  width: auto;
+  margin-top: 10px;
+}
+
+#slide3 .center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#slide1 .imgCont {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  margin-top: 30px;
+}
+
+
+#slide0 .top {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+#slide0 img {
+  width: 60vw;
+  height: auto;
+  align-self: center;
+  margin-right: 30px;
+}

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar apresentaçao</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="card">
+    <button onclick="start()">Iniciar Apresenta&ccedil;&atilde;o</button>
+  </div>
+  <script>
+    function start()
+    {
+      window.location.href = 'slide0.html'
+    }
+  </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .sources {
+      margin: 30px auto;
+      padding: 20px;
+      width: 80%;
+      max-width: 900px;
+      background-color: rgba(255, 255, 255, 0.05); /* subtle translucent background */
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      font-family: 'Oswald', sans-serif;
+      color: #f0f0f0;
+    }
+    
+    .sources h3 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      text-align: center;
+      color: rgb(0, 0, 0);
+    }
+    
+    .sources ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .sources ul li {
+      background-color: rgba(0,0,0,0.4);
+      padding: 12px 15px;
+      border-radius: 10px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    
+    .sources ul li:hover {
+      transform: translateY(-3px);
+      background-color: rgba(0,0,0,0.5);
+    }
+    
+    .sources ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    
+    .sources ul li a:hover {
+      color: #ffd700; /* gold on hover */
+      text-decoration: underline;
+    }
+    </style>
+    
+</head>
+<body><div class="sources">
+  <h3>Referências e leituras recomendadas:</h3>
+  <div class="ref">
+  <ul>
+    <li>
+      <a href="https://pt.wikipedia.org/wiki/Atentados_de_11_de_setembro_de_2001" target="_blank" 
+         title="Página da Wikipedia com detalhes sobre os ataques de 11 de setembro de 2001">
+        Wikipedia: Ataques de 11 de setembro de 2001
+      </a>
+    </li>
+    <li>
+      <a href="https://ipri.unl.pt/images/publicacoes/revista_ri/pdf/r3/RI3_LSM.pdf" target="_blank" 
+         title="Análise acadêmica sobre as mudanças globais após os ataques de 11 de setembro">
+        Mudanças globais após o 11 de setembro (Relatório IPRI)
+      </a>
+    </li>
+    <li>
+      <a href="https://g1.globo.com/mundo/noticia/2021/09/11/como-os-ataques-de-11-de-setembro-mudaram-o-mundo.ghtml" target="_blank" 
+         title="Artigo do G1 explicando os impactos dos ataques de 11 de setembro no mundo">
+        G1: Como os ataques de 11 de setembro mudaram o mundo
+      </a>
+    </li>
+    <li>
+      <a href="https://www.history.com/topics/21st-century/9-11-attacks" target="_blank"
+         title="Página detalhada da History sobre os ataques de 11 de setembro e suas consequências">
+        History: 9/11 Attacks Overview
+      </a>
+    </li>
+    <li>
+      <a href="https://www.cia.gov/the-world-factbook/countries/united-states/" target="_blank"
+         title="Informações gerais sobre os Estados Unidos e impactos de segurança pós 11 de setembro">
+        CIA World Factbook: United States
+      </a>
+    </li>
+    <li>
+      <a href="https://www.britannica.com/event/September-11-attacks" target="_blank"
+         title="Enciclopédia Britannica explicando os ataques de 11 de setembro em detalhes">
+        Britannica: September 11 Attacks
+      </a>
+    </li>
+    <li>
+      <a href="https://www.cnn.com/2021/09/10/us/september-11-anniversary-20th-trnd/index.html" target="_blank"
+         title="Cobertura da CNN sobre o 20º aniversário dos ataques de 11 de setembro">
+        CNN: 20th Anniversary of 9/11
+      </a>
+    </li>
+    <li>
+      <a href="https://www.un.org/en/chronicle/article/impact-september-11-attacks-united-states-and-world" target="_blank"
+         title="Análise da ONU sobre os impactos dos ataques de 11 de setembro no mundo">
+        UN Chronicle: Impact of September 11
+      </a>
+    </li>
+    <li>
+      <a href="https://www.bbc.com/news/world-us-canada-58406597" target="_blank"
+         title="BBC News sobre os ataques de 11 de setembro e os anos posteriores">
+        BBC News: 9/11 Legacy
+      </a>
+    </li>
+  </ul>
+</div>
+</div>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Os ataques de 11/9</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="top">
+    <div class="title">
+      <t>Os ataques de 11/9</t>
+      <sub>e como mudaram o mundo</sub>
+    </div>
+    <img src="https://img.luxtimes.lu/public/luxembourg/818vfq-saturday-marks-the-20th-anniversary-of-the-attacks-which-killed-nearly-3000-people/alternates/SIXTEEN_NINE_1920/Saturday%20marks%20the%2020th%20anniversary%20of%20the%20attacks%20which%20killed%20nearly%203000%20people" alt="9 11 atacks picture">
+  </div>
+  <script src="main.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="slide1">
+    <div class="title">
+      <t>O que foram os ataques de 11 de setembro?</t>
+      <p>Os ataques de 11 de setembro de 2001 foram uma série de quatro atentados suicidas coordenados pela rede terrorista Al-Qaeda contra os Estados Unidos, utilizando aviões comerciais sequestrados. Dois aviões atingiram as Torres Gêmeas do World Trade Center em Nova Iorque, causando o seu desabamento e a morte de quase 3.000 pessoas, marcando profundamente a segurança internacional. 
+      </p>
+    </div>
+    <div class="imgCont">
+      <img src="assets/nycMaps.png" alt="NYC on a map" width="100%">
+      <img id="cabra" src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ilqUNvPJEk5Q/v1/-1x-1.webp" alt="Twin Towers" width="100%">
+    </div> 
+  </div>
+  <script src="main.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="slide2">
+    <div class="center">
+        <div class="title">
+          <t>Quais os motivos para os ataques?</t>
+        </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="slide3">
+    <div class="center">
+      <div class="title">
+        <t>Como foi a busca por Bin Laden</t>
+      </div>
+      <div class="imgCont">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Osama_bin_Laden_hideout-en.svg/1280px-Osama_bin_Laden_hideout-en.svg.png" alt="Bin Laden's complex">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Osama_bin_Laden_compound1.jpg" alt="Bin laden compund IRL">
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body> 
+    <div id="slide4">
+      <div class="title">
+        <t>Que mudanças vieram ap&oacute;s os atentados</t>
+        <ul>
+          <li>Foi feito um memorial &agrave;s v&iacute;timas do 11/9</li>
+          <li>As Portas do cockpit de aeronaves passaram a ser feitas de um material &agrave; prova de balas</li>
+          <li>Foram iniciadas as guerras do Afeganist&atilde;o e do Iraque contra Al-Qaeda e contra os Talib&atilde;s</li>
+          <li>O povo americano passou a ter medo de pessoas de outros pa&iacute;ses</li>
+          <li>Organizações como a NATO passaram a atuar de forma mais ativa em operações ligadas ao combate ao terrorismo</li>
+          <li>Foi criada a TSA, que passou a controlar a segurança nos aeroportos dos EUA</li>
+        </ul>
+      </div>
+      <div class="imgCont">
+        <img src="https://www.travelawaits.com/wp-content/uploads/2021/04/aerial-view-of-the-9-11-memor3e1b51.jpg" alt="9 11 memorial 1">
+        <img src="https://wtc.com/wp-content/uploads/2024/09/carousel-memorial.jpg" alt="9 11 memorial 2">
+      </div> 
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>

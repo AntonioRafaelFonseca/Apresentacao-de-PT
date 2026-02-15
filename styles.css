@@ -90,7 +90,7 @@ img:hover {
 }
 #slide0 img:hover {
   filter: grayscale(0%);
-  width: 120%;
+  width: 60%;
   height: auto;
   transform: translate(-50px, 50px);
 }

@@ -1,10 +1,15 @@
 if(window.location.href.includes('slide'))
 {
+  cursor = true
+  const cur = document.querySelector('.cursor')
   document.addEventListener('mousemove', (e) => {
-    const cur = document.querySelector('.cursor')
-
-    cur.style.left = `${e.clientX}px`
-    cur.style.top = `${e.clientY}px`
+    if(cursor){
+      cur.style.left = `${e.clientX}px`
+      cur.style.top = `${e.clientY}px`
+    }else{
+      cur.style.left = `-100px`
+      cur.style.top = `-100px`
+    }
   });
   let current = (() => {
     const match = window.location.href.match(/slide(\d+)\.html$/);
@@ -36,6 +41,10 @@ if(window.location.href.includes('slide'))
         window.location.href = `slide${current}.html`;
       }
       
+    }else if(k.key == 'c')
+    {
+      if(cursor)cursor = false
+      else cursor = true
     }
   });
 }

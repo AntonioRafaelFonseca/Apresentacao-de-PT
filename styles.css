@@ -88,7 +88,7 @@ img:hover {
   filter: grayscale(0%);
   transform: scale(1.2);
 }
-#slide1 img:hover {
+#slide0 img:hover {
   transform: translate(-50px, 50px);
 }
 /* Lista de Mudanças (Slide 4) */

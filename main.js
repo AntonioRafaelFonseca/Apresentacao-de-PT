@@ -1,5 +1,11 @@
 if(window.location.href.includes('slide'))
 {
+  document.addEventListener('mousemove', (e) => {
+    const cur = document.querySelector('.cursor')
+
+    cur.style.left = `${e.clientX}px`
+    cur.style.top = `${e.clientY}px`
+  });
   let current = (() => {
     const match = window.location.href.match(/slide(\d+)\.html$/);
     return match ? Number(match[1]) : 0;

@@ -7,6 +7,22 @@
   --accent: hsl(0, 68%, 42%); /* Vermelho escuro */
 }
 
+
+.cursor{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: hsla(0, 0%, 0%, 0.2);
+  border: 3px solid hsla(0, 0%, 7%, 0.5);
+  border-radius: 50%;
+  box-shadow: 0px 0px 3px 2px white;
+  width: 10px;
+  height: 10px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
 body {
   background-color: var(--bg);
   color: var(--text);
@@ -16,7 +32,9 @@ body {
   padding-top: 25px;
   padding-left: 10px;
 }
-
+* {
+  cursor: none;
+}
 
 footer {
   position: absolute;

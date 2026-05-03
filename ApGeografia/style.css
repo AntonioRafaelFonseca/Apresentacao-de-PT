@@ -8,6 +8,7 @@
   --accent: #c56c2a;
   --accent-soft: #f2d7b7;
   --border: rgba(44, 42, 41, 0.12);
+  --void: rgb(0, 0, 0);
 }
 
 * {

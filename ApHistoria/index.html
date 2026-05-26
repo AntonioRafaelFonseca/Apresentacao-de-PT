@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação: As Invasões Francesas em Portugal</title>
+    <style>
+        /* --- CONFIGURAÇÕES GERAIS E PALETE DE CORES --- */
+        :root {
+            --cor-fundo-escura: #1e272e;
+            --cor-fundo-clara: #f8f9fa;
+            --azul-decorativo: #0a3d62;
+            --vermelho-guerra: #b33939;
+            --ouro-velho: #d1a153;
+            --texto-principal: #2c3e50;
+            --texto-claro: #ffffff;
+            --tempo-transicao: 0.5s;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--cor-fundo-escura);
+            color: var(--texto-principal);
+            overflow: hidden; /* Esconde as barras de rolagem para parecer um slide real */
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* --- CONTENTOR DOS SLIDES --- */
+        .palco-apresentacao {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* --- ESTILO BASE DE CADA SLIDE --- */
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity var(--tempo-transicao) ease-in-out, visibility var(--tempo-transicao);
+            background-color: var(--cor-fundo-clara);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 6rem;
+        }
+
+        /* Slide Ativo */
+        .slide.activo {
+            opacity: 1;
+            visibility: visible;
+            z-index: 10;
+        }
+
+        /* --- LAYOUT DO CONTEÚDO --- */
+        .conteudo-slide {
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        /* Slide de Capa / Título */
+        .slide-capa {
+            background: linear-gradient(135deg, #0a3d62, #1e272e);
+            color: var(--texto-claro);
+            text-align: center;
+            border: 8px solid var(--ouro-velho);
+        }
+
+        .slide-capa h1 {
+            font-size: 3.8rem;
+            color: var(--ouro-velho);
+            font-family: 'Georgia', serif;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .slide-capa .subtitulo {
+            font-size: 1.8rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        /* Títulos dos Slides Comuns */
+        h2 {
+            font-size: 2.5rem;
+            color: var(--azul-decorativo);
+            font-family: 'Georgia', serif;
+            margin-bottom: 2rem;
+            border-bottom: 4px solid var(--ouro-velho);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        /* Estrutura de Duas Colunas */
+        .grelha-dupla {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: top;
+        }
+
+        /* Listas Estilizadas */
+        ul {
+            list-style: none;
+        }
+
+        li {
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-left: 2rem;
+            line-height: 1.6;
+        }
+
+        li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: var(--vermelho-guerra);
+            font-size: 1.4rem;
+            top: -2px;
+        }
+
+        /* Caixas de Destaque */
+        .caixa-destaque {
+            background-color: rgba(10, 61, 98, 0.08);
+            border-left: 6px solid var(--azul-decorativo);
+            padding: 2rem;
+            border-radius: 4px;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        /* --- INTERFACE DE NAVEGAÇÃO --- */
+        .controlos {
+            position: absolute;
+            bottom: 2.5rem;
+            right: 4rem;
+            z-index: 100;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        button {
+            background-color: var(--azul-decorativo);
+            color: var(--texto-claro);
+            border: none;
+            padding: 0.8rem 1.8rem;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        button:hover {
+            background-color: var(--vermelho-guerra);
+            transform: translateY(-2px);
+        }
+
+        button:disabled {
+            background-color: #7f8c8d;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Número do Slide */
+        .indicador-posicao {
+            position: absolute;
+            bottom: 2.8rem;
+            left: 4rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--azul-decorativo);
+            z-index: 100;
+            transition: color var(--tempo-transicao);
+        }
+
+        .texto-claro-indicador {
+            color: var(--ouro-velho);
+        }
+
+        /* Barra de Progresso Superior */
+        .barra-progresso-contentor {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        .barra-progresso {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(to right, var(--ouro-velho), var(--vermelho-guerra));
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="palco-apresentacao">
+        
+        <div class="slide slide-capa activo">
+            <div class="conteudo-slide">
+                <h1>As Invasões Francesas</h1>
+                <p class="subtitulo">O Impacto do Expansionismo Napoleónico em Portugal</p>
+                <p style="margin-top: 3rem; opacity: 0.7; font-size: 1.1rem;">História de Portugal • Século XIX</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="conteudo-slide">
+                <h2>O Bloqueio Continental (1806)</h2>
+                <div class="grelha-dupla">
+                    <div>
+                        <ul>
+                            <li><strong>A Ordem de Napoleão:</strong> Decreto que proibia todas as nações europeias de comercializarem com a Grã-Bretanha.</li>
+                            <li><strong>O Dilema Português:</strong> Portugal encontrava-se numa posição frágil, preso entre a velha aliança com os ingleses e a ameaça militar francesa.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="caixa-destaque">
+                            "A recusa de Portugal em aderir plenamente ao Bloqueio Continental selou o destino do reino, transformando o território ibérico num dos principais palcos da Guerra Peninsular."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="conteudo-slide">
+                <h2>As Três Vagas de Invasão</h2>
+                <div class="grelha-dupla">
+                    <div>
+                        <h3 style="color: var(--vermelho-guerra); margin-bottom: 0.5rem;">1.ª Invasão (1807)</h3>
+                        <p style="font-size: 1.1rem; margin-bottom: 1rem;">Comandada por <strong>Junot</strong>. Resultou na fuga da Família Real portuguesa para o Brasil e na ocupação de Lisboa.</p>
+                        
+                        <h3 style="color: var(--vermelho-guerra); margin-bottom: 0.5rem;">2.ª Invasão (1809)</h3>
+                        <p style="font-size: 1.1rem; margin-bottom: 1rem;">Liderada por <strong>Soult</strong>. Entrou pelo norte do país e ficou marcada pelo trágico desastre da Ponte das Barcas, no Porto.</p>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--vermelho-guerra); margin-bottom: 0.5rem;">3.ª Invasão (1810)</h3>
+                        <p style="font-size: 1.1rem; margin-bottom: 1rem;">Chefiada por <strong>Massena</strong>. Travada eficazmente pelo exército luso-britânico nas Linhas de Torres Vedras.</p>
+                        <div class="caixa-destaque" style="padding: 1rem; margin-top: 1rem; font-size: 1.1rem;">
+                            As Linhas de Torres Vedras foram um sistema defensivo militar secreto que salvou Lisboa.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="conteudo-slide">
+                <h2>Principais Consequências</h2>
+                <div class="grelha-dupla">
+                    <div>
+                        <ul>
+                            <li><strong>Devastação do Território:</strong> Campos agrícolas destruídos, fomes, saques de património religioso e perda de milhares de vidas.</li>
+                            <li><strong>Abertura dos Portos do Brasil:</strong> O fim do exclusivo comercial metropolitano enfraqueceu gravemente a economia portuguesa.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li><strong>Descontentamento Político:</strong> A permanência da corte no Rio de Janeiro e a governação britânica em Lisboa criaram o cenário ideal para a revolta.</li>
+                            <li><strong>Sementes do Liberalismo:</strong> O vazio de poder e a crise culminaram na Revolução Liberal de 1820.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide slide-capa">
+            <div class="conteudo-slide">
+                <h2>O Fim do Antigo Regime</h2>
+                <p style="font-size: 1.6rem; max-width: 850px; margin: 0 auto 2.5rem auto; line-height: 1.6;">
+                    Embora profundamente destrutivas, as Invasões Francesas aceleraram o desmoronamento das velhas estruturas absolutistas, abrindo caminho para a modernidade constitucional em Portugal.
+                </p>
+                <div style="color: var(--ouro-velho); font-size: 1.3rem; font-weight: bold; letter-spacing: 2px;">
+                    OBRIGADO PELA VOSSA ATENÇÃO
+                </div>
+            </div>
+        </div>
+
+        <div class="indicador-posicao" id="numSlide">1 / 5</div>
+        
+        <div class="controlos">
+            <button id="btnAnterior" disabled>Anterior</button>
+            <button id="btnSeguinte">Seguinte</button>
+        </div>
+
+        <div class="barra-progresso-contentor">
+            <div class="barra-progresso" id="barraProgresso"></div>
+        </div>
+
+    </div>
+
+    <script>
+        // Captura de elementos
+        const slides = document.querySelectorAll('.slide');
+        const btnAnterior = document.getElementById('btnAnterior');
+        const btnSeguinte = document.getElementById('btnSeguinte');
+        const numSlide = document.getElementById('numSlide');
+        const barraProgresso = document.getElementById('barraProgresso');
+
+        let indiceActual = 0;
+        const totalSlides = slides.length;
+
+        // Função que atualiza o ecrã
+        function atualizarApresentacao() {
+            // Remove a classe activo de todos e adiciona apenas ao atual
+            slides.forEach((slide, index) => {
+                if (index === indiceActual) {
+                    slide.classList.add('activo');
+                } else {
+                    slide.classList.remove('activo');
+                }
+            });
+
+            // Ativa/Desativa botões nos extremos
+            btnAnterior.disabled = (indiceActual === 0);
+            btnSeguinte.disabled = (indiceActual === totalSlides - 1);
+
+            // Atualiza o número do rodapé
+            numSlide.textContent = `${indiceActual + 1} / ${totalSlides}`;
+
+            // Altera a cor do texto do rodapé se for um slide escuro (Capa ou Conclusão)
+            if (slides[indiceActual].classList.contains('slide-capa')) {
+                numSlide.classList.add('texto-claro-indicator');
+            } else {
+                numSlide.classList.remove('texto-claro-indicator');
+            }
+
+            // Atualiza a barra de progresso superior
+            const percentagem = ((indiceActual + 1) / totalSlides) * 100;
+            barraProgresso.style.width = `${percentagem}%`;
+        }
+
+        // Eventos de Clique nos Botões
+        btnAnterior.addEventListener('click', () => {
+            if (indiceActual > 0) {
+                indiceActual--;
+                atualizarApresentacao();
+            }
+        });
+
+        btnSeguinte.addEventListener('click', () => {
+            if (indiceActual < totalSlides - 1) {
+                indiceActual++;
+                atualizarApresentacao();
+            }
+        });
+
+        // Navegação Avançada por Teclado (Setas e Espaço)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                if (indiceActual < totalSlides - 1) {
+                    indiceActual++;
+                    atualizarApresentacao();
+                }
+            } else if (e.key === 'ArrowLeft') {
+                if (indiceActual > 0) {
+                    indiceActual--;
+                    atualizarApresentacao();
+                }
+            }
+        });
+
+        // Inicialização da barra
+        atualizarApresentacao();
+    </script>
+</body>
+</html>
